@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    color: #222222;
+    background-color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .nearby-stays-track {
+    display: flex;
+    gap: 1.25rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .nearby-stay-card {
+    flex: 0 0 calc((100% - 5rem) / 5);
+  }
+
+  @media (max-width: 1023px) {
+    .nearby-stay-card {
+      flex-basis: calc((100% - 1.25rem) / 2);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .nearby-stay-card {
+      flex-basis: 78%;
+    }
+  }
+}
